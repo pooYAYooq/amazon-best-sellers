@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import './index.css'
+import './index.css';
 
 function BookList() {
   return (
@@ -17,24 +17,12 @@ function BookList() {
 const Book = () => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src="./images/book-1.jpg" alt="Book Cover" />
+      <h2>Atomic Habits</h2>
+      <h4>James Clear</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg"
-    alt="Book Cover"
-  />
-);
-const Title = () => {
-  return <h2>Atomic Habits</h2>;
-};
-
-const Author = () => <h4>James Clear</h4>;
 
 const root = createRoot(document.getElementById('root'));
 
