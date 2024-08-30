@@ -14,12 +14,14 @@ function BookList() {
   );
 }
 
+const author = 'James Clear';
 const Book = () => {
+  const title = 'Atomic Habits';
   return (
     <article className="book">
       <img src="./images/book-1.jpg" alt="Book Cover" />
-      <h2>Atomic Habits</h2>
-      <h4>James Clear</h4>
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
 };
