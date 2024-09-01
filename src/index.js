@@ -3,26 +3,42 @@ import { createRoot } from 'react-dom/client';
 
 import './index.css';
 
-const title = 'Atomic Habits';
-const author = 'James Clear';
-const img = './images/book-1.jpg';
+const firstBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: './images/book-1.jpg',
+};
 
+const secondBook = {
+  author: 'Colleen Hoover ',
+  title: 'It Ends With Us',
+  img: './images/book-2.jpg',
+};
 
 function BookList() {
   return (
     <section className="booklist">
-      <Book author={author} title={title} img={img} />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
-const Book = (props) => {
+const Book = ({ img, title, author }) => {
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };
