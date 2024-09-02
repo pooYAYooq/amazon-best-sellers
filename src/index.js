@@ -3,32 +3,33 @@ import { createRoot } from 'react-dom/client';
 
 import './index.css';
 
-const firstBook = {
-  author: 'James Clear',
-  title: 'Atomic Habits',
-  img: './images/book-1.jpg',
-};
+const books = [
+  {
+    author: 'James Clear',
+    title: 'Atomic Habits',
+    img: './images/book-1.jpg',
+    id: 1,
+  },
+  {
+    author: 'Colleen Hoover',
+    title: 'It Ends With Us',
+    img: './images/book-2.jpg',
+    id: 2,
+  },
+  {
+    author: 'Lauren Roberts',
+    title: 'Reckless',
+    img: './images/book-3.jpg',
+    id: 3,
+  },
+];
 
-const secondBook = {
-  author: 'Colleen Hoover ',
-  title: 'It Ends With Us',
-  img: './images/book-2.jpg',
-};
-
-function BookList() {
+function Booklist() {
   return (
     <section className="booklist">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      />
-
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
+      {books.map((book) => {
+        return <Book key={book.id} {...book} />;
+      })}
     </section>
   );
 }
@@ -45,4 +46,6 @@ const Book = ({ img, title, author }) => {
 
 const root = createRoot(document.getElementById('root'));
 
-root.render(<BookList />);
+root.render(<Booklist />);
+
+
