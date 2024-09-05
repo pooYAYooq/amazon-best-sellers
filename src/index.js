@@ -7,11 +7,14 @@ import Book from './Book';
 
 function Booklist() {
   return (
-    <section className="booklist">
-      {books.map((book, index) => (
-        <Book key={book.id} {...book} number={index} />
-      ))}
-    </section>
+    <>
+      <h1>amazon best sellers</h1>
+      <section className="booklist">
+        {books.map((book, index) => (
+          <Book key={book.id} {...book} number={index} />
+        ))}
+      </section>
+    </>
   );
 }
 
