@@ -8,14 +8,12 @@ import Book from './Book';
 function Booklist() {
   return (
     <section className="booklist">
-      {books.map((book) => {
-        return <Book key={book.id} {...book} />;
-      })}
+      {books.map((book, index) => (
+        <Book key={book.id} {...book} number={index} />
+      ))}
     </section>
   );
 }
-
-
 
 const root = createRoot(document.getElementById('root'));
 
